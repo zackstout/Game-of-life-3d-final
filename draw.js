@@ -12,7 +12,7 @@ var material = new THREE.MeshLambertMaterial( { color: color } );
 var material2 = new THREE.MeshLambertMaterial( { color: color2 } );
 
 var height = 0;
-var threeD = true;
+var threeD = false;
 // Number of cells:
 var n = 20;
 // Size of each cell: ensures size is always 40 units.
@@ -22,6 +22,8 @@ var currentVals = [];
 var nextVals = [];
 // var initial = [[10, 10], [10, 11], [10, 12], [11, 10], [12, 11]];
 var initial = [[15, 15], [15, 16], [15, 17], [16, 15], [17, 16]];
+// var initial = [[10, 10], [10, 11], [10, 12]];
+// var initial = [[10, 10], [10, 11], [11, 10], [13, 12], [13, 13], [12, 13]];
 
 
 // -Setup three.js-
@@ -166,7 +168,7 @@ function getNeighbors(x) {
     for (var j=0; j < n; j++) {
       // Increment position by the size of each box:
       pos.set(i * s, y, j * s);
-      geometry = new THREE.BoxGeometry(s, s, s);
+      geometry = new THREE.BoxGeometry(s*0.9, s*0.9, s*0.9);
 
       if (threeD) {
         if (currentVals[i * n + j][2]) {
@@ -223,18 +225,6 @@ var t=0;
 var light = new THREE.PointLight(0xffffff);
 light.position.set(-20,50,20);
 scene.add(light);
-
-// var animate = function () {
-//   requestAnimationFrame( animate );
-//
-//   // cube.rotation.x += 0.1;
-//   // cube.rotation.y += 0.1;
-//
-//   renderer.render(scene, camera);
-//   light.position.x = -10 * Math.sin(t);
-//   light.position.z = 10 * Math.cos(t);
-//   t += 0.1;
-// };
 
 var animate = function () {
   setTimeout( function() {
