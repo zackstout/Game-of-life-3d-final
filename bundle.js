@@ -15,7 +15,7 @@ var material2 = new THREE.MeshLambertMaterial( { color: color2 } );
 var height = 0;
 
 // Toggle whether to view in 2d or 3d:
-var threeD = true;
+var threeD = false;
 // Number of cells:
 var n = 20;
 // Size of each cell: ensures size is always 40 units.
@@ -172,7 +172,7 @@ function getNeighbors(x) {
     for (var j=0; j < n; j++) {
       // Increment position by the size of each box:
       pos.set(i * s, y, j * s);
-      geometry = new THREE.BoxGeometry(s*0.9, s*0.9, s*0.9);
+      geometry = new THREE.BoxGeometry(s*0.94, s*0.94, s*0.94);
 
       if (threeD) {
         if (currentVals[i * n + j][2]) {

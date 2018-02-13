@@ -5,19 +5,16 @@ var OrbitControls = require('three-orbit-controls')(THREE);
 
 // -Global variables-
 var pos = new THREE.Vector3();
-// var color1 = new THREE.Color("rgb(0, 0, 30)");
-var color1 = new THREE.Color(" skyblue ");
-
+var color = new THREE.Color("rgb(100, 50, 30)");
 var color2 = new THREE.Color("rgb(0, 0, 255)");
 var geometry, cube;
-var material = new THREE.MeshBasicMaterial( { color: color1 } );
+var material = new THREE.MeshLambertMaterial( { color: color } );
 var material2 = new THREE.MeshLambertMaterial( { color: color2 } );
 
 var height = 0;
-var count = 0;
 
 // Toggle whether to view in 2d or 3d:
-var threeD = true;
+var threeD = false;
 // Number of cells:
 var n = 20;
 // Size of each cell: ensures size is always 40 units.
@@ -174,21 +171,15 @@ function getNeighbors(x) {
     for (var j=0; j < n; j++) {
       // Increment position by the size of each box:
       pos.set(i * s, y, j * s);
-      geometry = new THREE.BoxGeometry(s*0.9, s*0.9, s*0.9);
+      geometry = new THREE.BoxGeometry(s*0.94, s*0.94, s*0.94);
 
       if (threeD) {
         if (currentVals[i * n + j][2]) {
-          // console.log(count);
-          if (count % 2 == 0) {
-            cube = new THREE.Mesh( geometry, material );
-          } else {
-            cube = new THREE.Mesh( geometry, material2 );
-          }
+          cube = new THREE.Mesh( geometry, material );
           cube.position.copy( pos );
           cube.receiveShadow = true;
           cube.castShadow = true;
           scene.add( cube );
-          count ++;
         }
       } else {
         if (currentVals[i * n + j][2]) {
