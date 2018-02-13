@@ -12,7 +12,9 @@ var material = new THREE.MeshLambertMaterial( { color: color } );
 var material2 = new THREE.MeshLambertMaterial( { color: color2 } );
 
 var height = 0;
-var threeD = false;
+
+// Toggle whether to view in 2d or 3d:
+var threeD = true;
 // Number of cells:
 var n = 20;
 // Size of each cell: ensures size is always 40 units.
@@ -35,8 +37,9 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 camera.position.z = 45;
-camera.position.y = 10 + height;
+camera.position.y = 10;
 camera.position.x = 20;
+camera.rotation.x = Math.PI / 2;
 
 var controls = new OrbitControls( camera );
 controls.target.set( 0, 2, 0 );
@@ -232,6 +235,7 @@ var animate = function () {
     height += 1;
     if (!threeD) {
       camera.position.y = 10 + height;
+      light.position.y = 20 + height;
     } else {
         // light.position.x = -10 * Math.sin(t);
         // light.position.z = 10 * Math.cos(t);
