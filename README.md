@@ -5,10 +5,10 @@ Clone or download this repo, run ```npm install``` and open up the ```index.html
 
 ## Screenshots:
 2d-version of a glider:
-!(https://github.com/zackstout/Game-of-life-3d-final/blob/master/images/2d-image.png)
+![2d](https://github.com/zackstout/Game-of-life-3d-final/blob/master/images/2d-image.png)
 
 3d-version of a glider:
-!(https://github.com/zackstout/Game-of-life-3d-final/blob/master/images/3d-image.png)
+![3d](https://github.com/zackstout/Game-of-life-3d-final/blob/master/images/3d-image.png)
 ## Built With:
 - three.js
 - Browserify
