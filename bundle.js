@@ -246,7 +246,7 @@ var animate = function () {
 
     requestAnimationFrame( animate );
 
-  }, 400 );  renderer.render(scene, camera);
+  }, 600 );  renderer.render(scene, camera);
 
 };
 

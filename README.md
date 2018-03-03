@@ -5,7 +5,8 @@ Clone or download this repo, run ```npm install``` and open up the ```index.html
 
 ## Screenshots:
 2d-version of a glider:  
-![2d](https://github.com/zackstout/Game-of-life-3d-final/blob/master/images/2d-image.png)
+<!-- ![2d](https://github.com/zackstout/Game-of-life-3d-final/blob/master/images/2d-image.png) -->
+![2d](https://media.giphy.com/media/d7ob7C4G8L125kmwv9/giphy.gif)
 
 3d-version of a glider:  
 ![3d](https://github.com/zackstout/Game-of-life-3d-final/blob/master/images/3d-image.png)
